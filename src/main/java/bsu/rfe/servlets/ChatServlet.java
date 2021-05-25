@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import bsu.rfe.entity.ChatMessage;
 import bsu.rfe.entity.ChatUser;
 
-
-public class ChatServlet extends HttpServlet {
+public class ChatServlet extends HttpServlet
+{
     private static final long serialVersionUID = 1L;
     // Карта текущих пользователей
     protected HashMap<String, ChatUser> activeUsers;
@@ -16,7 +16,8 @@ public class ChatServlet extends HttpServlet {
     protected ArrayList<ChatMessage> messages;
 
     @SuppressWarnings("unchecked")
-    public void init() throws ServletException {
+    public void init() throws ServletException
+    {
 // Вызвать унаследованную от HttpServlet версию init()
         super.init();
 // Извлечь из контекста карту пользователей и список сообщений
@@ -24,8 +25,9 @@ public class ChatServlet extends HttpServlet {
                 getServletContext().getAttribute("activeUsers");
         messages = (ArrayList<ChatMessage>)
                 getServletContext().getAttribute("messages");
-// Если карта пользователей не определена ...
-        if (activeUsers == null) {
+// Если карта пользователей не определена
+        if (activeUsers == null)
+        {
 // Создать новую карту
             activeUsers = new HashMap<String, ChatUser>();
 // Поместить еѐ в контекст сервлета,
@@ -34,7 +36,8 @@ public class ChatServlet extends HttpServlet {
                     activeUsers);
         }
 // Если список сообщений не определѐн ...
-        if (messages == null) {
+        if (messages == null)
+        {
 // Создать новый список
             messages = new ArrayList<ChatMessage>(100);
 // Поместить его в контекст сервлета,
