@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import bsu.rfe.entity.ChatUser;
 
-
 public class LogoutServlet extends ChatServlet {
     private static final long serialVersionUID = 1L;
 
